@@ -28,7 +28,6 @@ class userController extends Controller
     public function get_users()
     {
       try {
-        // $data = User::select('name', 'email','user_id')->limit(10000)->offset(10000)->get()->toArray();
         $query = "SELECT users.user_id, users.first_name, users.last_name, users.email, users.address, users.city, users.country,users.zip_code,roles.role_name,categories.category_name,companies.company_name
                   FROM users
                   INNER JOIN roles
@@ -43,8 +42,6 @@ class userController extends Controller
       catch (Exception $e) {
       echo 'Caught exception: ',  $e->getMessage();
       }
-
-
     }
     public function update_user(Request $request)
     {
